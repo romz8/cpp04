@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:55:59 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/25 12:09:19 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/26 15:44:56 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Animal
 {
-private:
+protected:
 	std::string _type;
 
 public:

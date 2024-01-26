@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:22:21 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/26 12:00:56 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/26 16:31:00 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat::~Cat(void)
 
 Cat::Cat(const Cat& src)
 {
-	this->setType(src.getType());
+	this->_type = src.getType();
 	if (src._feline_brain)
 		this->_feline_brain = new Brain(*src._feline_brain);
 	else

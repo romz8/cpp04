@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:43:14 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/26 11:54:02 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/26 16:30:49 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Dog::~Dog(void)
 
 Dog::Dog(const Dog& src)
 {
-	this->setType(src.getType());
+	this->_type = src.getType();
 	if (src._canide_brain)
 		this->_canide_brain = new Brain(*src._canide_brain); //we need to intantiande a brain * in the class dog, using the Brain constructor 
 	else
