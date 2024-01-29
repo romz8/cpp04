@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:14:55 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/26 16:17:00 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/29 14:48:37 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@ Cure& Cure::operator=(const Cure& src)
 /************************** Member Fuction ********************************/
 void Cure::use(ICharacter& target)
 {
-	std::cout << "* shoots an Cure bolt at " << target.getName() << " *";
+	std::cout << "* heals " << target.getName() << "'s wounds *";
 	std::cout << std::endl;
+}
+
+AMateria* Cure::clone(void) const
+{
+	std::cout << "Cloning Cure object" << std::endl;
+	return (new Ice());
 }

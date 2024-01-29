@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:03:27 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/26 16:14:38 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/29 11:57:17 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,10 @@ void Ice::use(ICharacter& target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
 	std::cout << std::endl;
+}
+
+AMateria* Ice::clone(void) const
+{
+	std::cout << "Cloning Ice object" << std::endl;
+	return (new Ice());
 }

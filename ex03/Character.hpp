@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:59:15 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/26 15:13:12 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/29 17:48:47 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,25 @@
 
 # include "Ice.hpp"
 # include "Cure.hpp"
+# include "ICharacter.hpp"
 
-class ICharacter
+class Character : public ICharacter
 {
+private:
+	static const int _storage_size = 4;
+	std::string	_name;
+	AMateria	*_inventory[_storage_size];
+
 public:
-	virtual ~ICharacter() {}
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
+	Character();
+	Character(const std::string& name);
+	~Character();
+	Character(const Character& src);
+	Character& operator=(const Character& src);
+	std::string const & getName() const;
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, ICharacter& target);
 };
 
 #endif
