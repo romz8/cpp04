@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:54:13 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/26 16:08:25 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:07:20 by romainjober      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string>
 # include <iostream>
-# include "Character.hpp"
+# include "ICharacter.hpp"
 # include "colors.h"
 
 class AMateria

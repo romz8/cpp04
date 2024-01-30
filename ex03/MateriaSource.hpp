@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:54:12 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/29 18:53:45 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:16:44 by romainjober      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "IMateriaSource.hpp"
 
-class MateriaSource : public MateriaSource
+class MateriaSource : public IMateriaSource
 {
 private:
 	static const int _tmplate_size = 4;

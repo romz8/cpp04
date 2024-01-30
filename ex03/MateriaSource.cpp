@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:43:49 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/29 19:11:48 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:38:37 by romainjober      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,42 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& src)
 	return (*this);
 }
 
-/************* TO Implement ************/
-void learnMateria(AMateria*);
-AMateria* createMateria(std::string const & type);
+/*********************** Factory Pattern *********************************/
+
+/*
+Memory Management : Careful here on how we handle src if no space left, 
+should we delete or transfer ownership of memory to main ? subject is unclear
+*/
+void MateriaSource::learnMateria(AMateria* src)
+{
+	bool clone_complete = false;
+
+	if (!src)
+		return ;
+	for (int i = 0; i < _tmplate_size; ++i)
+	{
+		if(this->_templates[i] == NULL)
+		{
+			this->_templates[i] = src;
+			clone_complete = true;
+			break ;
+		}
+	}
+	if (clone_complete != true)
+		std::cout << "Impossible to learn a new Materia, MateriaSource Class is full" << std::endl;
+}
+
+
+AMateria* MateriaSource::createMateria(std::string const & type)
+{
+	for (int i = 0; i < _tmplate_size; ++i)
+	{
+		if (this->_templates[i])
+			if (this->_templates[i]->getType() == type)
+				return (this->_templates[i]->clone());
+	}
+	return (0);
+}
 
 
 /****** Member function ***********/

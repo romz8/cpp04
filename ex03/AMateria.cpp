@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:53:42 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/26 16:08:20 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:13:42 by romainjober      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Amateria.hpp"
+#include "AMateria.hpp"
 
 /************************** Canonical Suite *********************************/
 AMateria::AMateria(void)
@@ -36,6 +36,7 @@ AMateria& AMateria::operator=(const AMateria& src)
 	if (this != &src)
 		this->_type = src.getType();
 	std::cout << BG_CYAN " Assignment Operator AMateria " RESET << std::endl;
+	return (*this);
 }
 	
 /******************** Mber function and Pure Virutal Fnction *****************/

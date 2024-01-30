@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:33:26 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/29 17:56:53 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:13:09 by romainjober      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+
 # include "AMateria.hpp"
+
+class AMateria; // fwd declaration
 
 class ICharacter
 {

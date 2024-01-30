@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:14:55 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/29 14:48:37 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:14:40 by romainjober      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Cure& Cure::operator=(const Cure& src)
 	if (this != &src)
 		this->_type = src.getType();
 	std::cout << BG_GREEN " Asignment Constructor Cure " RESET << std::endl;
+	return (*this);
 }
 
 
@@ -48,5 +49,5 @@ void Cure::use(ICharacter& target)
 AMateria* Cure::clone(void) const
 {
 	std::cout << "Cloning Cure object" << std::endl;
-	return (new Ice());
+	return (new Cure());
 }

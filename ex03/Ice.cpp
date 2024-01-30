@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:03:27 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/29 11:57:17 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:15:02 by romainjober      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Ice& Ice::operator=(const Ice& src)
 	if (this != &src)
 		this->_type = src.getType();
 	std::cout << BG_MAGENTA " Asignment Constructor Ice " RESET << std::endl;
+	return (*this);
 }
 
 
