@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
+/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:03:27 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/30 18:15:02 by romainjober      ###   ########.fr       */
+/*   Updated: 2024/01/31 13:26:27 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 /************************** Canonical Suite ********************************/
 Ice::Ice(void) : AMateria("ice")
 {
-	std::cout << BG_MAGENTA " Default Contructor Ice " RESET << std::endl;
+	std::cout << MAGENTA " Default Contructor Ice " RESET << std::endl;
 }
 
 Ice::~Ice(void)
 {
-	std::cout << BG_MAGENTA " Default Destructor Ice " RESET << std::endl;
+	std::cout << MAGENTA " Default Destructor Ice " RESET << std::endl;
 }
 
 Ice::Ice(const Ice& src)
 {
 	this->_type = src.getType();
-	std::cout << BG_MAGENTA " Copy Constructor Ice " RESET << std::endl;
+	std::cout << MAGENTA " Copy Constructor Ice " RESET << std::endl;
 	
 }
 
@@ -34,7 +34,7 @@ Ice& Ice::operator=(const Ice& src)
 {
 	if (this != &src)
 		this->_type = src.getType();
-	std::cout << BG_MAGENTA " Asignment Constructor Ice " RESET << std::endl;
+	std::cout << MAGENTA " Asignment Constructor Ice " RESET << std::endl;
 	return (*this);
 }
 

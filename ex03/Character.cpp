@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
+/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:53:06 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/30 18:13:56 by romainjober      ###   ########.fr       */
+/*   Updated: 2024/01/31 11:45:31 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ Character::~Character(void)
 {
 	for (int i = 0; i < _storage_size; ++i)
 	{
-		if (this->_inventory[i])
+		if (this->_inventory[i] != NULL)
+		{
 			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
 	}
 	std::cout << BG_YELLOW "Default Character Destructor" RESET << std::endl;
 }

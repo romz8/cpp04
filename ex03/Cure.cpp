@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romainjobert <romainjobert@student.42.f    +#+  +:+       +#+        */
+/*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:14:55 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/30 18:14:40 by romainjober      ###   ########.fr       */
+/*   Updated: 2024/01/31 13:26:41 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 /************************** Canonical Suite ********************************/
 Cure::Cure(void) : AMateria("cure")
 {
-	std::cout << BG_GREEN " Default Contructor Cure " RESET << std::endl;
+	std::cout << GREEN " Default Contructor Cure " RESET << std::endl;
 }
 
 Cure::~Cure(void)
 {
-	std::cout << BG_GREEN " Default Destructor Cure " RESET << std::endl;
+	std::cout << GREEN " Default Destructor Cure " RESET << std::endl;
 }
 
 Cure::Cure(const Cure& src)
 {
 	this->_type = src.getType();
-	std::cout << BG_GREEN " Copy Constructor Cure " RESET << std::endl;
+	std::cout << GREEN " Copy Constructor Cure " RESET << std::endl;
 	
 }
 
@@ -34,7 +34,7 @@ Cure& Cure::operator=(const Cure& src)
 {
 	if (this != &src)
 		this->_type = src.getType();
-	std::cout << BG_GREEN " Asignment Constructor Cure " RESET << std::endl;
+	std::cout << GREEN " Asignment Constructor Cure " RESET << std::endl;
 	return (*this);
 }
 
