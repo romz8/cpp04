@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:59:15 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/29 17:48:47 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/31 14:36:54 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 	void equip(AMateria* m);
 	void unequip(int idx);
 	void use(int idx, ICharacter& target);
+	void _display_inventory(void);
 };
 
 #endif

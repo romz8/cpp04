@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:53:06 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/31 11:45:31 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/31 15:54:38 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,10 @@ std::string const & Character::getName(void) const
 void Character::equip(AMateria* m)
 {
 	if (m == NULL)
+	{
+		std::cout << RED "Cannot add NULL material to inventory" RESET << std::endl;
 		return;
+	}
 	for (int i = 0; i < _storage_size; ++i)
 	{
 		if (this->_inventory[i] == NULL)
@@ -85,21 +88,45 @@ void Character::equip(AMateria* m)
 			return ;
 		}
 	}
+	std::cout << RED "Cannot add - Inventory full" RESET << std::endl;
 	
 }
 // don't forget to test for negative and Out of bond values
 void Character::unequip(int idx)
 {
 	if (idx >= this->_storage_size || idx < 0)
+	{
+		std::cout << RED "Index Out of Range" RESET << std::endl;
 		return;
+	}
 	this->_inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx >= this->_storage_size || idx < 0)
+	{
+		std::cout << RED "Index Out of Range" RESET << std::endl;
 		return;
+	}
 	if (this->_inventory[idx] == NULL)
+	{
+		std::cout << RED "Cannot use - empty / NULL material" RESET << std::endl;
 		return;
+	}
 	this->_inventory[idx]->use(target);
+}
+
+void Character::_display_inventory(void)
+{
+	std::cout << "Character " << this->getName() << " has in inventory : ";
+	std::cout << std::endl;
+	for (int i = 0; i < _storage_size; ++i)
+	{
+		if (this->_inventory[i] != NULL)
+			std::cout << "slot [" << i << "]  is : " << this->_inventory[i] << " of type: " << this->_inventory[i]->getType();
+		else
+			std::cout << "slot [" << i << "]  is : empty/ NULL";
+		std::cout << std::endl;
+	}
 }

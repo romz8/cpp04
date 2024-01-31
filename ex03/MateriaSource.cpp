@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:43:49 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/31 13:54:12 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:16:46 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void MateriaSource::learnMateria(AMateria* src)
 
 	if (!src)
 	{
-		std::cout << RED "Invalid Materia (NULL)" << std::endl;
+		std::cout << RED "Invalid Materia (NULL)" RESET << std::endl;
 		return ;
 	}
 	for (int i = 0; i < _tmplate_size; ++i)
@@ -73,7 +73,7 @@ void MateriaSource::learnMateria(AMateria* src)
 		}
 	}
 	if (clone_complete != true)
-		std::cout << "Impossible to learn a new Materia, MateriaSource Class is full" << std::endl;
+		std::cout << RED "Impossible to learn a new Materia, MateriaSource Class is full" RESET << std::endl;
 }
 
 
@@ -114,7 +114,7 @@ void	MateriaSource::_display_templates(void)
 	for (int i = 0; i < _tmplate_size; ++i)
 	{
 		if (this->_templates[i] != NULL)
-			std::cout << "Materia's slot [" << i <<"] is: " << this->_templates[i]->getType();
+			std::cout << "Materia's slot [" << i <<"] is: " << this->_templates[i] << " of type: " << this->_templates[i]->getType();
 		else
 			std::cout << "Materia's slot [" << i <<"] is empty / NULL";
 		std::cout << std::endl;
